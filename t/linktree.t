@@ -1,19 +1,57 @@
 #-*-perl-*-
-BEGIN { $| = 1; $tx=1; print "1..1\n"; }
+BEGIN { $| = 1; $tx=1; print "1..3\n"; }
 
 sub ok { print "ok $tx\n"; $tx++; }
 sub not_ok { print "not ok $tx\n"; $tx++; }
 
-unlink("t/out.new", "t/err.new");
-system("rm -r t/u 2>/dev/null");
+delete $ENV{LINKTREE_BASE};
+use IO::File;
+use File::Recurse;
 
-my $redir = '1>>t/out.new 2>>/dev/null';
-system("$^X -Mblib -w linktree --verbose t/1 t/u $redir")==0 or die 1;
-system("$^X -Mblib -w linktree --verbose t/2 t/u $redir")==0 or die 2;
-system("$^X -Mblib -w linktree --verbose --unlink t/1 t/u $redir")==0 or die 3;
-system("$^X -Mblib -w prunetree --verbose t/u $redir")==0 or die 4;
+-d 't' or die "Can't find t/ directory";
+ok;
 
-system($^X, '-pi', '-e', 's, \S*/t/, T/,g;', glob('t/*.new'))==0 or die 'fixup';
+system("rm -rf t/u 2>/dev/null");
+system("$^X t/mktrees.pl");
+ok;
+
+my $step=1;
+my $out = new IO::File;
+$out->open(">t/out.new") or die "open t/out.new";
+
+sub inspect {
+    print $out "$step\n";
+    ++ $step;
+    my @l;
+    recurse(sub {
+	my $f = $_;
+	if (-l $f) {
+	    my $to = readlink($f);
+	    $to =~ s,^\S*/t/,t/,;
+	    push(@l, "$f -> $to\n");
+	} else {
+	    push(@l, "$f\n");
+	}
+    }, 't/u');
+    print $out sort(@l);
+}
+
+my $redir = '2>>/dev/null';
+system("$^X -Mblib -w linktree t/1 t/u $redir")==0 or die $step;
+&inspect;
+system("$^X -Mblib -w linktree t/2 t/u $redir")==0 or die $step;
+&inspect;
+system("$^X -Mblib -w linktree t/3 t/u $redir")==0 or die $step;
+&inspect;
+system("$^X -Mblib -w linktree -u t/1 t/u $redir")==0 or die $step;
+&inspect;
+system("$^X -Mblib -w linktree -f t/LINKTREES -p t/u $redir")==0 or die $step;
+&inspect;
+system("rm -rf t/u/* 2>/dev/null");
+system("$^X -Mblib -w linktree -f t/LINKTREES t/u $redir")==0 or die $step;
+&inspect;
+
+$out->close;
 
 # Also see module 'Test::Output'
 sub check {
@@ -31,3 +69,4 @@ sub check {
 }
 
 check("t/out.new", "t/out.good");
+#check("t/err.new", "t/err.good");

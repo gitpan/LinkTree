@@ -1,0 +1,329 @@
+1
+t/u/base
+t/u/base/cond.t -> t/1/base/cond.t
+t/u/base/cond.t.ln -> cond.t
+t/u/base/if.t -> t/1/base/if.t
+t/u/base/if.t.ln -> if.t
+t/u/base/lex.t -> t/1/base/lex.t
+t/u/base/lex.t.ln -> lex.t
+t/u/base/pat.t -> t/1/base/pat.t
+t/u/base/pat.t.ln -> pat.t
+t/u/base/term.t -> t/1/base/term.t
+t/u/base/term.t.ln -> term.t
+t/u/cmd
+t/u/cmd/elsif.t -> t/1/cmd/elsif.t
+t/u/cmd/elsif.t.ln -> elsif.t
+t/u/cmd/for.t -> t/1/cmd/for.t
+t/u/cmd/for.t.ln -> for.t
+t/u/cmd/mod.t -> t/1/cmd/mod.t
+t/u/cmd/mod.t.ln -> mod.t
+t/u/cmd/subval.t -> t/1/cmd/subval.t
+t/u/cmd/subval.t.ln -> subval.t
+t/u/cmd/switch.t -> t/1/cmd/switch.t
+t/u/cmd/switch.t.ln -> switch.t
+t/u/cmd/while.t -> t/1/cmd/while.t
+t/u/cmd/while.t.ln -> while.t
+t/u/comp
+t/u/io
+2
+t/u/base
+t/u/base/cond.t -> t/1/base/cond.t
+t/u/base/cond.t.ln -> cond.t
+t/u/base/if.t -> t/1/base/if.t
+t/u/base/if.t.ln -> if.t
+t/u/base/lex.t -> t/1/base/lex.t
+t/u/base/lex.t.ln -> lex.t
+t/u/base/pat.t -> t/1/base/pat.t
+t/u/base/pat.t.ln -> pat.t
+t/u/base/term.t -> t/1/base/term.t
+t/u/base/term.t.ln -> term.t
+t/u/cmd
+t/u/cmd/elsif.t -> t/2/cmd/elsif.t
+t/u/cmd/elsif.t.ln -> elsif.t
+t/u/cmd/for.t -> t/2/cmd/for.t
+t/u/cmd/for.t.ln -> for.t
+t/u/cmd/mod.t -> t/2/cmd/mod.t
+t/u/cmd/mod.t.ln -> mod.t
+t/u/cmd/subval.t -> t/2/cmd/subval.t
+t/u/cmd/subval.t.ln -> subval.t
+t/u/cmd/switch.t -> t/2/cmd/switch.t
+t/u/cmd/switch.t.ln -> switch.t
+t/u/cmd/while.t -> t/2/cmd/while.t
+t/u/cmd/while.t.ln -> while.t
+t/u/comp
+t/u/comp/cmdopt.t -> t/2/comp/cmdopt.t
+t/u/comp/cmdopt.t.ln -> cmdopt.t
+t/u/comp/colon.t -> t/2/comp/colon.t
+t/u/comp/colon.t.ln -> colon.t
+t/u/comp/cpp.aux -> t/2/comp/cpp.aux
+t/u/comp/cpp.aux.ln -> cpp.aux
+t/u/comp/cpp.t -> t/2/comp/cpp.t
+t/u/comp/cpp.t.ln -> cpp.t
+t/u/comp/decl.t -> t/2/comp/decl.t
+t/u/comp/decl.t.ln -> decl.t
+t/u/comp/multiline.t -> t/2/comp/multiline.t
+t/u/comp/multiline.t.ln -> multiline.t
+t/u/comp/package.t -> t/2/comp/package.t
+t/u/comp/package.t.ln -> package.t
+t/u/comp/proto.t -> t/2/comp/proto.t
+t/u/comp/proto.t.ln -> proto.t
+t/u/comp/redef.t -> t/2/comp/redef.t
+t/u/comp/redef.t.ln -> redef.t
+t/u/comp/script.t -> t/2/comp/script.t
+t/u/comp/script.t.ln -> script.t
+t/u/comp/term.t -> t/2/comp/term.t
+t/u/comp/term.t.ln -> term.t
+t/u/comp/use.t -> t/2/comp/use.t
+t/u/comp/use.t.ln -> use.t
+t/u/io
+3
+t/u/base
+t/u/base/cond.t -> t/1/base/cond.t
+t/u/base/cond.t.ln -> cond.t
+t/u/base/if.t -> t/1/base/if.t
+t/u/base/if.t.ln -> if.t
+t/u/base/lex.t -> t/1/base/lex.t
+t/u/base/lex.t.ln -> lex.t
+t/u/base/pat.t -> t/1/base/pat.t
+t/u/base/pat.t.ln -> pat.t
+t/u/base/term.t -> t/1/base/term.t
+t/u/base/term.t.ln -> term.t
+t/u/cmd
+t/u/cmd/elsif.t -> t/2/cmd/elsif.t
+t/u/cmd/elsif.t.ln -> elsif.t
+t/u/cmd/for.t -> t/2/cmd/for.t
+t/u/cmd/for.t.ln -> for.t
+t/u/cmd/mod.t -> t/2/cmd/mod.t
+t/u/cmd/mod.t.ln -> mod.t
+t/u/cmd/subval.t -> t/2/cmd/subval.t
+t/u/cmd/subval.t.ln -> subval.t
+t/u/cmd/switch.t -> t/2/cmd/switch.t
+t/u/cmd/switch.t.ln -> switch.t
+t/u/cmd/while.t -> t/2/cmd/while.t
+t/u/cmd/while.t.ln -> while.t
+t/u/comp
+t/u/comp/cmdopt.t -> t/2/comp/cmdopt.t
+t/u/comp/cmdopt.t.ln -> cmdopt.t
+t/u/comp/colon.t -> t/2/comp/colon.t
+t/u/comp/colon.t.ln -> colon.t
+t/u/comp/cpp.aux -> t/2/comp/cpp.aux
+t/u/comp/cpp.aux.ln -> cpp.aux
+t/u/comp/cpp.t -> t/2/comp/cpp.t
+t/u/comp/cpp.t.ln -> cpp.t
+t/u/comp/decl.t -> t/2/comp/decl.t
+t/u/comp/decl.t.ln -> decl.t
+t/u/comp/multiline.t -> t/2/comp/multiline.t
+t/u/comp/multiline.t.ln -> multiline.t
+t/u/comp/package.t -> t/2/comp/package.t
+t/u/comp/package.t.ln -> package.t
+t/u/comp/proto.t -> t/2/comp/proto.t
+t/u/comp/proto.t.ln -> proto.t
+t/u/comp/redef.t -> t/2/comp/redef.t
+t/u/comp/redef.t.ln -> redef.t
+t/u/comp/script.t -> t/2/comp/script.t
+t/u/comp/script.t.ln -> script.t
+t/u/comp/term.t -> t/2/comp/term.t
+t/u/comp/term.t.ln -> term.t
+t/u/comp/use.t -> t/2/comp/use.t
+t/u/comp/use.t.ln -> use.t
+t/u/io
+t/u/io/io
+t/u/io/io/io
+t/u/io/io/io/argv.t -> t/3/io/io/io/argv.t
+t/u/io/io/io/argv.t.ln -> argv.t
+t/u/io/io/io/dup.t -> t/3/io/io/io/dup.t
+t/u/io/io/io/dup.t.ln -> dup.t
+t/u/io/io/io/fs.t -> t/3/io/io/io/fs.t
+t/u/io/io/io/fs.t.ln -> fs.t
+t/u/io/io/io/inplace.t -> t/3/io/io/io/inplace.t
+t/u/io/io/io/inplace.t.ln -> inplace.t
+t/u/io/io/io/pipe.t -> t/3/io/io/io/pipe.t
+t/u/io/io/io/pipe.t.ln -> pipe.t
+t/u/io/io/io/print.t -> t/3/io/io/io/print.t
+t/u/io/io/io/print.t.ln -> print.t
+t/u/io/io/io/read.t -> t/3/io/io/io/read.t
+t/u/io/io/io/read.t.ln -> read.t
+t/u/io/io/io/tell.t -> t/3/io/io/io/tell.t
+t/u/io/io/io/tell.t.ln -> tell.t
+4
+t/u/base
+t/u/base/cond.t.ln -> cond.t
+t/u/base/if.t.ln -> if.t
+t/u/base/lex.t.ln -> lex.t
+t/u/base/pat.t.ln -> pat.t
+t/u/base/term.t.ln -> term.t
+t/u/cmd
+t/u/cmd/elsif.t -> t/2/cmd/elsif.t
+t/u/cmd/elsif.t.ln -> elsif.t
+t/u/cmd/for.t -> t/2/cmd/for.t
+t/u/cmd/for.t.ln -> for.t
+t/u/cmd/mod.t -> t/2/cmd/mod.t
+t/u/cmd/mod.t.ln -> mod.t
+t/u/cmd/subval.t -> t/2/cmd/subval.t
+t/u/cmd/subval.t.ln -> subval.t
+t/u/cmd/switch.t -> t/2/cmd/switch.t
+t/u/cmd/switch.t.ln -> switch.t
+t/u/cmd/while.t -> t/2/cmd/while.t
+t/u/cmd/while.t.ln -> while.t
+t/u/comp
+t/u/comp/cmdopt.t -> t/2/comp/cmdopt.t
+t/u/comp/cmdopt.t.ln -> cmdopt.t
+t/u/comp/colon.t -> t/2/comp/colon.t
+t/u/comp/colon.t.ln -> colon.t
+t/u/comp/cpp.aux -> t/2/comp/cpp.aux
+t/u/comp/cpp.aux.ln -> cpp.aux
+t/u/comp/cpp.t -> t/2/comp/cpp.t
+t/u/comp/cpp.t.ln -> cpp.t
+t/u/comp/decl.t -> t/2/comp/decl.t
+t/u/comp/decl.t.ln -> decl.t
+t/u/comp/multiline.t -> t/2/comp/multiline.t
+t/u/comp/multiline.t.ln -> multiline.t
+t/u/comp/package.t -> t/2/comp/package.t
+t/u/comp/package.t.ln -> package.t
+t/u/comp/proto.t -> t/2/comp/proto.t
+t/u/comp/proto.t.ln -> proto.t
+t/u/comp/redef.t -> t/2/comp/redef.t
+t/u/comp/redef.t.ln -> redef.t
+t/u/comp/script.t -> t/2/comp/script.t
+t/u/comp/script.t.ln -> script.t
+t/u/comp/term.t -> t/2/comp/term.t
+t/u/comp/term.t.ln -> term.t
+t/u/comp/use.t -> t/2/comp/use.t
+t/u/comp/use.t.ln -> use.t
+t/u/io
+t/u/io/io
+t/u/io/io/io
+t/u/io/io/io/argv.t -> t/3/io/io/io/argv.t
+t/u/io/io/io/argv.t.ln -> argv.t
+t/u/io/io/io/dup.t -> t/3/io/io/io/dup.t
+t/u/io/io/io/dup.t.ln -> dup.t
+t/u/io/io/io/fs.t -> t/3/io/io/io/fs.t
+t/u/io/io/io/fs.t.ln -> fs.t
+t/u/io/io/io/inplace.t -> t/3/io/io/io/inplace.t
+t/u/io/io/io/inplace.t.ln -> inplace.t
+t/u/io/io/io/pipe.t -> t/3/io/io/io/pipe.t
+t/u/io/io/io/pipe.t.ln -> pipe.t
+t/u/io/io/io/print.t -> t/3/io/io/io/print.t
+t/u/io/io/io/print.t.ln -> print.t
+t/u/io/io/io/read.t -> t/3/io/io/io/read.t
+t/u/io/io/io/read.t.ln -> read.t
+t/u/io/io/io/tell.t -> t/3/io/io/io/tell.t
+t/u/io/io/io/tell.t.ln -> tell.t
+5
+t/u/base
+t/u/cmd
+t/u/cmd/elsif.t -> t/2/cmd/elsif.t
+t/u/cmd/elsif.t.ln -> elsif.t
+t/u/cmd/for.t -> t/2/cmd/for.t
+t/u/cmd/for.t.ln -> for.t
+t/u/cmd/mod.t -> t/2/cmd/mod.t
+t/u/cmd/mod.t.ln -> mod.t
+t/u/cmd/subval.t -> t/2/cmd/subval.t
+t/u/cmd/subval.t.ln -> subval.t
+t/u/cmd/switch.t -> t/2/cmd/switch.t
+t/u/cmd/switch.t.ln -> switch.t
+t/u/cmd/while.t -> t/2/cmd/while.t
+t/u/cmd/while.t.ln -> while.t
+t/u/comp
+t/u/comp/cmdopt.t -> t/2/comp/cmdopt.t
+t/u/comp/cmdopt.t.ln -> cmdopt.t
+t/u/comp/colon.t -> t/2/comp/colon.t
+t/u/comp/colon.t.ln -> colon.t
+t/u/comp/cpp.aux -> t/2/comp/cpp.aux
+t/u/comp/cpp.aux.ln -> cpp.aux
+t/u/comp/cpp.t -> t/2/comp/cpp.t
+t/u/comp/cpp.t.ln -> cpp.t
+t/u/comp/decl.t -> t/2/comp/decl.t
+t/u/comp/decl.t.ln -> decl.t
+t/u/comp/multiline.t -> t/2/comp/multiline.t
+t/u/comp/multiline.t.ln -> multiline.t
+t/u/comp/package.t -> t/2/comp/package.t
+t/u/comp/package.t.ln -> package.t
+t/u/comp/proto.t -> t/2/comp/proto.t
+t/u/comp/proto.t.ln -> proto.t
+t/u/comp/redef.t -> t/2/comp/redef.t
+t/u/comp/redef.t.ln -> redef.t
+t/u/comp/script.t -> t/2/comp/script.t
+t/u/comp/script.t.ln -> script.t
+t/u/comp/term.t -> t/2/comp/term.t
+t/u/comp/term.t.ln -> term.t
+t/u/comp/use.t -> t/2/comp/use.t
+t/u/comp/use.t.ln -> use.t
+t/u/io
+t/u/io/io
+t/u/io/io/io
+t/u/io/io/io/argv.t -> t/3/io/io/io/argv.t
+t/u/io/io/io/argv.t.ln -> argv.t
+t/u/io/io/io/dup.t -> t/3/io/io/io/dup.t
+t/u/io/io/io/dup.t.ln -> dup.t
+t/u/io/io/io/fs.t -> t/3/io/io/io/fs.t
+t/u/io/io/io/fs.t.ln -> fs.t
+t/u/io/io/io/inplace.t -> t/3/io/io/io/inplace.t
+t/u/io/io/io/inplace.t.ln -> inplace.t
+t/u/io/io/io/pipe.t -> t/3/io/io/io/pipe.t
+t/u/io/io/io/pipe.t.ln -> pipe.t
+t/u/io/io/io/print.t -> t/3/io/io/io/print.t
+t/u/io/io/io/print.t.ln -> print.t
+t/u/io/io/io/read.t -> t/3/io/io/io/read.t
+t/u/io/io/io/read.t.ln -> read.t
+t/u/io/io/io/tell.t -> t/3/io/io/io/tell.t
+t/u/io/io/io/tell.t.ln -> tell.t
+6
+t/u/base
+t/u/cmd
+t/u/cmd/elsif.t -> t/2/cmd/elsif.t
+t/u/cmd/elsif.t.ln -> elsif.t
+t/u/cmd/for.t -> t/2/cmd/for.t
+t/u/cmd/for.t.ln -> for.t
+t/u/cmd/mod.t -> t/2/cmd/mod.t
+t/u/cmd/mod.t.ln -> mod.t
+t/u/cmd/subval.t -> t/2/cmd/subval.t
+t/u/cmd/subval.t.ln -> subval.t
+t/u/cmd/switch.t -> t/2/cmd/switch.t
+t/u/cmd/switch.t.ln -> switch.t
+t/u/cmd/while.t -> t/2/cmd/while.t
+t/u/cmd/while.t.ln -> while.t
+t/u/comp
+t/u/comp/cmdopt.t -> t/2/comp/cmdopt.t
+t/u/comp/cmdopt.t.ln -> cmdopt.t
+t/u/comp/colon.t -> t/2/comp/colon.t
+t/u/comp/colon.t.ln -> colon.t
+t/u/comp/cpp.aux -> t/2/comp/cpp.aux
+t/u/comp/cpp.aux.ln -> cpp.aux
+t/u/comp/cpp.t -> t/2/comp/cpp.t
+t/u/comp/cpp.t.ln -> cpp.t
+t/u/comp/decl.t -> t/2/comp/decl.t
+t/u/comp/decl.t.ln -> decl.t
+t/u/comp/multiline.t -> t/2/comp/multiline.t
+t/u/comp/multiline.t.ln -> multiline.t
+t/u/comp/package.t -> t/2/comp/package.t
+t/u/comp/package.t.ln -> package.t
+t/u/comp/proto.t -> t/2/comp/proto.t
+t/u/comp/proto.t.ln -> proto.t
+t/u/comp/redef.t -> t/2/comp/redef.t
+t/u/comp/redef.t.ln -> redef.t
+t/u/comp/script.t -> t/2/comp/script.t
+t/u/comp/script.t.ln -> script.t
+t/u/comp/term.t -> t/2/comp/term.t
+t/u/comp/term.t.ln -> term.t
+t/u/comp/use.t -> t/2/comp/use.t
+t/u/comp/use.t.ln -> use.t
+t/u/io
+t/u/io/io
+t/u/io/io/io
+t/u/io/io/io/argv.t -> t/3/io/io/io/argv.t
+t/u/io/io/io/argv.t.ln -> argv.t
+t/u/io/io/io/dup.t -> t/3/io/io/io/dup.t
+t/u/io/io/io/dup.t.ln -> dup.t
+t/u/io/io/io/fs.t -> t/3/io/io/io/fs.t
+t/u/io/io/io/fs.t.ln -> fs.t
+t/u/io/io/io/inplace.t -> t/3/io/io/io/inplace.t
+t/u/io/io/io/inplace.t.ln -> inplace.t
+t/u/io/io/io/pipe.t -> t/3/io/io/io/pipe.t
+t/u/io/io/io/pipe.t.ln -> pipe.t
+t/u/io/io/io/print.t -> t/3/io/io/io/print.t
+t/u/io/io/io/print.t.ln -> print.t
+t/u/io/io/io/read.t -> t/3/io/io/io/read.t
+t/u/io/io/io/read.t.ln -> read.t
+t/u/io/io/io/tell.t -> t/3/io/io/io/tell.t
+t/u/io/io/io/tell.t.ln -> tell.t

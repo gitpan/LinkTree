@@ -1,0 +1,37 @@
+ajs@ajs.com
+
+Could you release a new version of File::Recurse with the following
+patch?  Some of my tools depend on it!  Thanks a million directories!
+
+*** File-Tools-2.0/Recurse.pm	Wed Apr  3 15:59:46 1996
+--- /nw/dev/usr/lib/perl5/site_perl/File/Recurse.pm	Fri Sep 19 15:55:46 1997
+***************
+*** 37,50 ****
+      while(defined($file = readdir D)) {
+  	next if ($file eq '.' || $file eq '..');
+  	my $path = "$dir/$file";
+! 	next unless -e $path;
+! 
+  	$_ = $path;
+  	$ret = &$exe($path,$context);
+  	next if ($ret == -1);
+  	last if ($ret == -2);
+  
+! 	if (-d _) {
+  	    next if (-l $path && !$File::Recurse::FOLLOW_SYMLINKS);
+  	    $ret = recurse($exe,$path,$context,$level+1);
+  	    last if ($ret == -2);
+--- 37,49 ----
+      while(defined($file = readdir D)) {
+  	next if ($file eq '.' || $file eq '..');
+  	my $path = "$dir/$file";
+! 	my $is_dir = -d $path;
+  	$_ = $path;
+  	$ret = &$exe($path,$context);
+  	next if ($ret == -1);
+  	last if ($ret == -2);
+  
+! 	if ($is_dir) {
+  	    next if (-l $path && !$File::Recurse::FOLLOW_SYMLINKS);
+  	    $ret = recurse($exe,$path,$context,$level+1);
+  	    last if ($ret == -2);

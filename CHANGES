@@ -1,0 +1,25 @@
+11/25/97 1.05
+
+A number of people reported failures running the test suite.  I bet
+the problem is a bug in File::Recurse.  I sent the author a patch
+months ago and it never got released.  Please use either
+'Recurse/patch' or move 'Recurse/Recurse.pm' into the top level of the
+distribution to repair your copy.
+
+This is what it should look like:
+
+[joshua@grdevl137] /nw/dev/perl/LinkTree/LTree% make test
+cp LinkTree.pm ./blib/lib/File/LinkTree.pm
+Skip ./blib/lib/File/Recurse.pm (unchanged)
+PERL_DL_NONLAZY=1 /nw/dev/usr/bin/perl -I./blib/arch -I./blib/lib -I/nw/dev/usr/lib/perl5/sun4-solaris/5.00452 -I/nw/dev/usr/lib/perl5 -e 'use Test::Harness qw(&runtests $verbose); $verbose=0; runtests @ARGV;' t/*.t
+t/linktree..........ok
+All tests successful.
+Files=1,  Tests=3, 22 secs ( 2.57 cusr  1.84 csys =  4.41 cpu)
+
+Also added a -F force flag.
+
+
+11/22/97 1.04
+
+Improved the precision of LINKTREES directory listing.  Now it notices
+if only a single sub-tree is symlink'd.

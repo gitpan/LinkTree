@@ -1,21 +1,77 @@
-#!/nw/dev/perl/bin/perl -w
+#!/nw/dev/u/bin/perl -w
 
 use strict;
-use Getopt::Long;
+use Cwd;
+use Getopt::Std;
+use IO::File;
 use File::LinkTree;
 
 sub usage {
-    my $nm = $0;
-    $nm =~ s,^.*/,,;
-    print "usage: $nm [--unlink] [--mode 0777] [--ignore 'regex'] [--nop] [--verbose] <src> <dest>\n";
+    print 
+"usage: linktree [-n] [-v] [-m 0777] [-u] (<src>|-f LINKTREES) <dest>
+         -f <trees>    link all the directories listed in <trees>
+         -m <mode>     create directories with <mode>
+         -u            unlink
+         -F            force
+         If \$LINKTREE_BASE is set, <dest> may be omitted.
+
+       linktree -p [-n] [-v] [-f LINKTREES] <dir>
+         -f <trees>    write a list of all directories linked into <dir>
+         -p            prune bad links under <dir> (or \$LINKTREE_BASE)
+
+         -n            no operation mode
+         -s            silent (don't warn about minor problems)
+         -v            verbose
+";
     exit 0;
 }
 
-my %opt;
-GetOptions(\%opt, "mode=s", "unlink", "nop", "verbose", "ignore:s@") or usage();
-usage() if @ARGV != 2;
-$opt{src} = shift @ARGV;
-$opt{dest} = shift @ARGV;
-symlink_tree(%opt);
+my $opt = {};
+getopts("f:m:upnvF", $opt) or &usage;
 
-exit 0;
+$opt->{nop} = $opt->{n};
+$opt->{verbose} = $opt->{v};
+$opt->{'cwd'} = getcwd;
+$opt->{force} = $opt->{F};
+
+if (! $opt->{p}) {
+    my $part2 = sub {
+	my ($opt) = @_;
+	&usage if (!$opt->{src} or !$opt->{dest} or @ARGV);
+	symlink_tree($opt);
+    };
+
+    $opt->{mode} = $opt->{'m'};
+    $opt->{'unlink'} = $opt->{u};
+    $opt->{dest} = $ENV{LINKTREE_BASE} if $ENV{LINKTREE_BASE};
+    if ($opt->{f}) {
+	$opt->{dest} = shift @ARGV if @ARGV;
+	my $fh = new IO::File;
+	$fh->open($opt->{f}) or die "open $opt->{f}: $!";
+	my $orig_dest = $opt->{dest};
+	while (defined(my $l = <$fh>)) {
+	    chomp $l;
+	    my @args = split(/\s+/, $l);
+	    $opt->{src} = $args[0];
+	    if (@args == 1) {
+	      $part2->($opt);
+	    } elsif (@args == 2) {
+	      $opt->{src} .= $args[1];
+	      $opt->{dest} .= $args[1];
+	      $part2->($opt);
+	      $opt->{dest} = $orig_dest;
+	    }
+	}
+    } else {
+	$opt->{src} = shift @ARGV;
+	$opt->{dest} = shift @ARGV if @ARGV;
+	$part2->($opt);
+    }
+} else {
+    &usage if ($opt->{'m'} or $opt->{u});
+    $opt->{dir} = $ENV{LINKTREE_BASE} if $ENV{LINKTREE_BASE};
+    $opt->{dir} = shift @ARGV if @ARGV;
+    $opt->{trees} = $opt->{f} if $opt->{f};
+    &usage if @ARGV;
+    prune_tree($opt);
+}
