@@ -4,33 +4,18 @@ Attempt at the definitive linktree implementation.
 
                                  -*-
 
-Creates symlink trees, also known as shadow directories.  Contains
-extra logic to manage merging of directory trees.  We are using this
-package to create complete perl installs with different version mixes
-for integration testing.
+File::LinkTree - Creates symlink trees.  Also can prune bad links and
+unused directories.
 
-- Prunes bad links and unused directories.
-
-- Creates a listing of merged directories that can be use to rebuild
-the merge.
-
-usage: linktree [-n] [-v] [-m 0777] [-u] (<src>|-f LINKTREES) <dest>
-         -f <trees>    link all the directories listed in <trees>
-         -m <mode>     create directories with <mode>
-         -u            unlink
-         If $LINKTREE_BASE is set, <dest> may be omitted.
- 
-       linktree -p [-n] [-v] [-f LINKTREES] <dir>
-         -f <trees>    write a list of all directories linked into <dir>
-         -p            prune bad links under <dir> (or $LINKTREE_BASE)
- 
-         -n            no operation mode
-         -s            silent (don't warn about minor problems)
-         -v            verbose
+Command line programs linktree and prunetree provide interfaces to the
+library.
 
                                  -*-
 
-Get it from http://www.perl.com/CPAN/authors/id/JPRIT/!
+Hopefully, this package will eventually be rolled into a File::*
+bundle.
+
+                                 -*-
 
 Requires File::Recurse (part of File::Tools module).
 

@@ -4,44 +4,16 @@ BEGIN { $| = 1; $tx=1; print "1..1\n"; }
 sub ok { print "ok $tx\n"; $tx++; }
 sub not_ok { print "not ok $tx\n"; $tx++; }
 
-delete $ENV{LINKTREE_BASE};
-use IO::File;
-use File::Recurse;
-
+unlink("t/out.new", "t/err.new");
 system("rm -r t/u 2>/dev/null");
 
-my $step=1;
-my $out = new IO::File;
-$out->open(">t/out.new") or die "open t/out.new";
+my $redir = '1>>t/out.new 2>>/dev/null';
+system("$^X -Mblib -w linktree --verbose t/1 t/u $redir")==0 or die 1;
+system("$^X -Mblib -w linktree --verbose t/2 t/u $redir")==0 or die 2;
+system("$^X -Mblib -w linktree --verbose --unlink t/1 t/u $redir")==0 or die 3;
+system("$^X -Mblib -w prunetree --verbose t/u $redir")==0 or die 4;
 
-sub inspect {
-    print $out "$step\n";
-    ++ $step;
-    my @l;
-    recurse(sub {
-	my $f = $_;
-	if (-l $f) {
-	    my $to = readlink($f);
-	    $to =~ s,^\S*/t/,t/,;
-	    push(@l, "$f -> $to\n");
-	} else {
-	    push(@l, "$f\n");
-	}
-    }, 't/u');
-    print $out sort(@l);
-}
-
-my $redir = '2>>/dev/null';
-system("$^X -Mblib -w linktree t/1 t/u $redir")==0 or die $step;
-&inspect;
-system("$^X -Mblib -w linktree t/2 t/u $redir")==0 or die $step;
-&inspect;
-system("$^X -Mblib -w linktree -u t/1 t/u $redir")==0 or die $step;
-&inspect;
-system("$^X -Mblib -w linktree -p t/u $redir")==0 or die $step;
-&inspect;
-
-$out->close;
+system($^X, '-pi', '-e', 's, \S*/t/, T/,g;', glob('t/*.new'))==0 or die 'fixup';
 
 # Also see module 'Test::Output'
 sub check {
@@ -59,4 +31,3 @@ sub check {
 }
 
 check("t/out.new", "t/out.good");
-#check("t/err.new", "t/err.good");

@@ -1,0 +1,20 @@
+#!/nw/dev/perl/bin/perl -w
+
+use strict;
+use Getopt::Long;
+use File::LinkTree;
+
+sub usage {
+    my $nm = $0;
+    $nm =~ s,^.*/,,;
+    print "usage: $nm [--nop] [--verbose] <path>\n";
+    exit 0;
+}
+
+my %opt;
+GetOptions(\%opt, "nop", "verbose") or usage();
+usage() if @ARGV != 1;
+$opt{dir} = shift @ARGV;
+prune_tree(%opt);
+
+exit 0;
